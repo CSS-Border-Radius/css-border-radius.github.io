@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>border-radius</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+	<style type="text/css">
+
+		body{
+			background-color: #748085;
+			text-align: center;
+		}
+		textarea{
+			border: 0px solid #000000;
+			background-color: #c8d1d9;
+			text-align: center;
+			resize: none;
+			height: 300px;
+			width: 300px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-10 col-lg-3" ></div>
+
+			<div class="col-md-12 col-lg-5" >
+
+				<h1>Border Radius</h1>
+				<h5>Gerador de border-radius</h5>
+
+				<textarea id="textarea" disabled="disabled"></textarea>
+
+			</div>
+
+			<div class="col-md-10 col-lg-4" >
+				<br>
+				<h3 style="text-align: left;">Controles</h3>
+				<br>
+
+				<div class="row">
+					<div class="col-6" style="text-align: left;">
+						<p>Espessura-da-Borda:</p> 
+					</div>
+					<div class="col-6">
+						<input type="range" class="custom-range" value="0" id="borda" min="0" max="20" onchange="estilos()">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6" style="text-align: left;">
+						<p>Cor-da-Borda:</p> 	 
+					</div>
+					<div class="col-6">
+						<input id="color" class="custom-select custom-select-sm" type="color" onchange="estilos()">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6" style="text-align: left;">
+						<p>Estilo-da-Borda:</p> 
+					</div>
+					<div class="col-6">
+						<select id="estilo" class="custom-select custom-select-sm" onchange="estilos()">
+						<option value="solid">Solid</option>
+						<option value="dotted">Dotted</option>
+						<option value="dashed">Dashed</option>
+						<option value="double">Double</option>
+						<option value="groove">Groove</option>
+						<option value="ridge">Ridge</option>
+						<option value="inset">Inset</option>
+						<option value="outset">Outset</option>
+						<option value="hidden">Hidden</option>
+						<option value="none">None</option>
+						</select>	
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6" style="text-align: left;">
+						<p>Todas-as-Bordas:</p> 
+					</div>
+					<div class="col-6">
+						<input type="range" class="custom-range" value="0" id="all" min="0" max="200" onchange="allborder()">
+						
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6" style="text-align: left;">
+						<p>Esquerda-Cima:</p> 
+					</div>
+					<div class="col-6">
+						<input type="range" class="custom-range" value="0" id="ec" min="0" max="200" onchange="border()">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6" style="text-align: left;">
+						<p>Esquerda-Baixo:</p> 
+					</div>
+					<div class="col-6">
+						<input type="range" class="custom-range" value="0" id="eb" min="0" max="200" onchange="border()">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6" style="text-align: left;">
+						<p>Direita-Cima:</p> 
+					</div>
+					<div class="col-6">
+						<input type="range" class="custom-range" value="0" id="dc" min="0" max="200" onchange="border()">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6" style="text-align: left;">
+						<p>Direita-Baixo:</p> 
+					</div>
+					<div class="col-6">
+						<input type="range" class="custom-range" value="0" id="db" min="0" max="200" onchange="border()">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<h6 style="text-align: center;">Criador por Anderson P.</h6>
+		</div>
+
+	</div>
+
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	var textarea = document.querySelector('#textarea');
+
+	var cor = document.querySelector('#color');
+	var estilo = document.querySelector('#estilo');
+	var espesura = document.querySelector('#borda');
+
+	var all = document.querySelector('#all');
+
+	var ec = document.querySelector('#ec');
+	var eb = document.querySelector('#eb');
+	var dc = document.querySelector('#dc');
+	var db = document.querySelector('#db');
+
+	function texto(){
+		textarea.value = "\n\n\n";
+
+		if(espesura.value != "0"){
+			textarea.value = "\nborder-style: "+ estilo.value+";";
+			textarea.value = textarea.value + "\nborder-color: "+cor.value+";";
+			textarea.value = textarea.value + "\nborder-width: "+espesura.value+"px;";
+		}
+		if(ec.value == eb.value && eb.value == dc.value && dc.value == db.value && db.value == ec.value){
+			if(ec.value != "0"){
+				textarea.value = textarea.value + "\nborder-radius: "+all.value+"px;";
+			}
+		}else{
+			if(ec.value != "0"){ 
+				textarea.value = textarea.value + "\nborder-top-left-radius: "+ec.value+"px;";
+			}
+			if(eb.value != "0"){ 
+				textarea.value = textarea.value + "\nborder-bottom-left-radius: "+eb.value+"px;";
+			}
+			if(dc.value != "0"){ 
+				textarea.value = textarea.value + "\nborder-top-right-radius: "+dc.value+"px;";
+			}
+			if(db.value != "0"){ 
+				textarea.value = textarea.value + "\nborder-bottom-right-radius: "+db.value+"px;";
+			}
+		}
+	};
+
+	function estilos(){
+		if(espesura.value != "0"){
+			textarea.style.borderStyle = estilo.value;
+			textarea.style.borderColor = cor.value;
+			textarea.style.borderWidth = espesura.value+"px";
+		}else{ 
+			textarea.style.borderWidth = "0px";
+		}
+		texto();
+	};
+
+	function allborder(){
+		textarea.style.borderRadius = all.value+"px";
+
+		ec.value = all.value;
+		eb.value = all.value;
+		dc.value = all.value;
+		db.value = all.value;
+
+		texto();
+	};
+
+	function border(){
+
+		if(ec.value != "0"){ 
+			textarea.style.borderTopLeftRadius = ec.value+"px";
+		}else{
+			textarea.style.borderTopLeftRadius = ec.value+"px";
+		}
+		if(eb.value != "0"){ 
+			textarea.style.borderBottomLeftRadius = eb.value+"px";
+		}else{
+			textarea.style.borderBottomLeftRadius = eb.value+"px";
+		}
+		if(dc.value != "0"){ 
+			textarea.style.borderTopRightRadius = dc.value+"px";
+		}else{
+			textarea.style.borderTopRightRadius = dc.value+"px";
+		}
+		if(db.value != "0"){ 
+			textarea.style.borderBottomRightRadius = db.value+"px";
+		}else{
+			textarea.style.borderBottomRightRadius = db.value+"px";
+		}
+
+		if(ec.value == "0" && eb.value == "0" && dc.value == "0" && db.value == "0"){
+			all.value = "0";
+		}
+
+		texto();
+	};
+
+</script>
