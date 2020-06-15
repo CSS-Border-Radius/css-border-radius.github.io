@@ -13,9 +13,7 @@
 		<div class="container" style="padding-top: 10%;">
 			<div class="row">
 
-				<div class="col-md-12 col-lg-3" >
-					<script data-ad-client="ca-pub-8067047785485978" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				</div>
+				<div class="col-md-12 col-lg-3" ></div>
 
 				<div class="col-md-12 col-lg-5" >
 
@@ -128,18 +126,30 @@
 				<h4 style="text-align: center;color: #4717F6;">Criado por Anderson P.</h4>
 				<br>
 				<div style="text-align: left;">
-					<h5>border-radius:</h5>
-					<p>A propriedade border-radius define o raio dos cantos do elemento.</p>
-					<p>Por padrão, border-radius se aplica em todas as 4 bordas do elemento simultaneamente. Porém podendo ser aplicada individualmente em uma propriedade  como border-radius: 12px 50px 20px 0px;</p>
+					<h5>Afinal de contas, o que é border-radius?:</h5>
+					<p>A propriedade radius definida em border define o raio dos cantos do elementos, ou melhor dizendo, permite definir o arredondamento das bordas definindo um ou dois raios para a criação de círculos ou elipses.</p>
+					<center>
+						<img src="imagens/borda.png">
+					</center>
+					<br><br>
+					<p><b>OBS.:</b> Mesmo que o elemento não possua borda a propriedade border-radius é aplicada ao background do elemento.</p>
+					<p>Por padrão, border-radius se aplica em todas as 4 quinas do elemento simultaneamente quando atribuído somente um parâmetro. porém podendo ser aplicada individualmente em uma única propriedade quando passado de dois a mais parâmetros, como border-radius: 12px 50px 20px 0px; Sendo seu limite 4 parâmetros.</p>
+					<p>Caso queira definir uma quina específica do elemento você pode atribuir ela através de border-(top ou bottom)-(left ou right)-radius, como por exemplo border-top-right-radius.</p>
+					<br>
+
+					<h5>border:</h5>
+					<p>A propriedade border define como será a borda do elemento recebendo como parâmetro o estilo da borda (obrigatório), a largura da borda que por padrão fica aproximadamente 3px e a cor da borda que caso não seja definida fica por padrão a cor da fonte, lembrando que a ordem das propriedades não irá alterar a definição da borda.</p>
+					<p>Basicamente, essa propriedade border é uma propriedade abreviada de border-width (que define a espessura da borda), border-style (que define o estilo da borda) e border-color (que define a cor da borda).</p>
 					<br>
 
 					<h5>border-width:</h5>
-					<p>A propriedade  border-width impõe a espessura da borda porém para sua propriedade  ser visualizada tem de ter o estilo da borda definida por border-style e a cor da borda definição essa aplicada pelo border-color</p>
+					<p>A propriedade border-width impõe a espessura da borda, porém para sua propriedade ser visualizada tem de ter o estilo da borda definida por border-style e definir também a cor da borda definição essa aplicada pelo border-color</p>
+					<p>Por padrão, border-width se aplica em todas as 4 bordas do elemento simultaneamente quando atribuído somente um parâmetro. porém podendo ser aplicada individualmente em uma única propriedade quando passado de dois a mais parâmetros, como border-width: 12px 50px 20px 0px; Sendo seu limite 4 parâmetros.</p>
 					<br>
 
 					<h5>border-style:</h5>
-					<p>A propriedade  border-style impõe o estilo da borda porém para sua propriedade  ser visualizada tem de ter a espessura da borda definida por border-width e a cor da borda definição essa aplicada pelo border-color.</p>
-					<p>Por padrão, border-style se aplica em todas as 4 bordas do elemento simultaneamente. Porém podendo ser aplicada individualmente em uma propriedade  como border-style: solid double dotted none;</p>
+					<p>A propriedade  border-style impõe o estilo da borda porém para sua propriedade  ser visualizada tem de ter a espessura da borda definida por border-width e definir também a cor da borda definição essa aplicada pelo border-color.</p>
+					<p>Por padrão, border-style se aplica em todas as 4 bordas do elemento simultaneamente. Porém podendo ser aplicada individualmente em uma propriedade como border-style: solid double dotted none;</p>
 					<p>Esta propriedade pode ter de um desses valores:</p>
 
 					<p><b>Solid:</b> Aplica uma borda sólida ao elemento</p>
@@ -195,8 +205,11 @@
 
 					<h5>border-color:</h5>
 					<p>A propriedade  border-color impõe a cor da borda porém para sua propriedade  ser visualizada tem de ter a espessura da borda definida por border-width e o estilo da borda definição essa aplicada pelo border-style.</p>
-					<p>A propriedade  essa podendo ser definido por HEX (hexadecimal) RGB (Red-green-blue) RGBA (Red-green-blue-alpha) HSL (Hue-saturation-lightness) HSLA (Hue-saturation-lightness-alpha)</p>
-					<p>Por padrão, border-style se aplica em todas as 4 bordas do elemento simultaneamente. Porém podendo ser aplicada individualmente em uma propriedade  como border-color: #ff0000 #00ff00 #0000ff rgb(250,0,255);</p>
+					<p>A propriedade essa podendo ser definido por três tipos de valores sendo eles:</p>
+					<p><b>HEX (hexadecimal):</b> Valor que são suportados em todos os navegadores. Uma cor hexadecimal é especificada com: #RRGGBB sendo RR (vermelho), GG (verde) e BB (azul) são números inteiros hexadecimais entre 00 e FF, especificando a intensidade da cor. </p>
+					<p><b>RGB (Red-green-blue) ou RGBA (Red-green-blue-alpha):</b> Valores que são suportados em todos os navegadores. Um valor de cor RGB é especificado com: rgb (vermelho, verde, azul), sendo cada parâmetro (vermelho, verde e azul) define a intensidade da cor como um número inteiro entre 0 e 255, porém para RGBA é adicionado um parâmetro adicional (alfa) sendo ele um número entre 0,0 (totalmente transparente) e 1,0 (nem um pouco transparente) por exemplo: rgba(255,100,50,0.5)</p>
+					<p><b>HSL (Hue-saturation-lightness) HSLA (Hue-saturation-lightness-alpha):</b> Sendo Hue a Matiz sendo um grau na roda de cores de 0 a 360. A saturação é um valor percentual, 0% significa um tom de cinza e 100% é a cor completa. A luminosidade também é um valor percentual, 0% é preto e 100% é branco. Porém para HSLA é adicionado um parâmetro adicional (alfa) sendo ele um número entre 0,0 (totalmente transparente) e 1,0 (nem um pouco transparente)</p>
+					<p>Por padrão, border-style se aplica em todas as 4 bordas do elemento simultaneamente. Porém podendo ser aplicada individualmente em uma única propriedade com o border-color usando ainda valores diferentes, sendo seu limite 4 parâmetros: #ff0000 hsl(0,100%,50%) #0000ff rgb(250,0,255);</p>
 					<center>
 						<img src="imagens/cor.png">
 					</center>
